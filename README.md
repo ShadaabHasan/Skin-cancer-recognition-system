@@ -28,10 +28,6 @@ The Skin Cancer Recognition System is a computer vision project aimed at aiding 
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. Ensure that your code follows the project’s coding standards and is well-documented.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgements
 
 - This project uses datasets and resources from the Modified National Institute of Standards and Technology database (MNIST).
