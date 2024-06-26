@@ -1,35 +1,35 @@
-# Skin Cancer Recognition System
+# Skin cancer recognition system
 
-## Overview
+> **Abstract** : The skin cancer recognition system is a computer vision project focused on early detection of skin cancer by analyzing digital images of skin lesions. The process involves image acquisition, preprocessing for quality enhancement, feature extraction capturing color, texture, and shape characteristics, and classification using machine learning or deep learning algorithm like CNNs. The model is trained on labeled datasets, validated, and tested for accuracy and generalization. The system aims to provide a non-invasive tool for early detection, potentially improving outcomes through timely intervention and treatment, contributing to public health by aiding both healthcare professionals and individuals in identifying potential skin cancer risks.
 
-The Skin Cancer Recognition System is a computer vision project aimed at aiding in detection of skin cancer through automated analysis of skin lesion images. By leveraging advanced machine learning and deep learning techniques, this system provides an efficient and non-invasive tool for identifying potential skin cancer risks, ultimately contributing to improved patient outcomes and public health.
+### Project Members
+1. HASAN SHADAAB NAJMUL  [ Team Leader ] 
+2. PALLAR SIDDHARTH RAMCHANDRAN 
+3. MASTIM AYAN AHMED QASID 
+4. KHAN HAMZA GULREIZ 
 
-## Features
+### Project Guides
+1. PROF. MOHD ASHFAQUE SHAIKH  [ Primary Guide ] 
 
-- **Image Preprocessing**: Enhances quality of skin lesion images for better analysis.
-- **Machine Learning Classification**: Utilizes algorithms like CNNs and SVMs for accurate classification.
-- **User-Friendly Interface**: Allows easy upload of images for quick feedback on malignancy likelihood.
-- **Real-Time Analysis**: Provides instant results and recommendations for further action.
+### Deployment Steps
+Please follow the below steps to run this project.
+1. Step 1 `python3 GUI.py` 
+2. Step 2 Select the image you want to upload.
+3. Step 3 Click on start
 
-## Prerequisites
 
-- Python 3.7 or higher
-- Libraries: TensorFlow, Keras, SeaBorn, Scikit-learn, Flask, NumPy, Pandas, Matplotlib, math
+### Subject Details
+- Class : TE (COMP) Div A - 2023-2024
+- Subject : Mini Project Lab: 2B (mP2B)
+- Project Type : Mini Project
 
-## Project Structure
+### Platform, Libraries and Frameworks used
+1. [NodeJS](https://nodejs.org)
+2. [ExpressJS](https://expressjs.org)
+3. [TensorFlow](https://tensorflowjs.com)
+4. [Python](https://docs.python.org/3/)
 
-- **/models**: Pre-trained machine learning models for skin cancer detection.
-- **/images**: Sample images for testing.
-- **app.py**: Main application script.
-- **preprocessing.py**: Image preprocessing and feature extraction functions.
-- **classification.py**: Machine learning and deep learning model implementations.
+### Dataset Used
+1. [Kaggle Dataset- MNIST: HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
 
-## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request with your changes. Ensure that your code follows the project’s coding standards and is well-documented.
-
-## Acknowledgements
-
-- This project uses datasets and resources from the Modified National Institute of Standards and Technology database (MNIST).
-
----
