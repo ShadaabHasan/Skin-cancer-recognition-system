@@ -52,4 +52,25 @@ Click **Upload**, choose an image, then click **Start**.
 
 ## Limitations
 
-- **The reported test accuracy is too optimistic.** The data was oversampled *before* it was split, so copies of the same image can appear in both the
+- **The reported test accuracy is too optimistic.** The data was oversampled *before* it was split, so copies of the same image can appear in both the training and the test set. The test set was also used for early stopping. Accuracy on truly new images would be lower.
+- The images are only 28 × 28 pixels, which loses a lot of detail that matters for diagnosis.
+- Accuracy alone is not a good measure here. For skin cancer, **melanoma recall** (how many real melanomas the model catches) matters most.
+- This is a student project and is **not a medical tool**.
+
+## Planned improvements
+
+- Split the data first, then oversample only the training set, and keep a separate validation set.
+- Use transfer learning (for example EfficientNet) on full-size images.
+- Report per-class recall, especially for melanoma, and a confusion matrix.
+- Add Grad-CAM heatmaps to show which parts of the image the model looks at.
+
+## Team
+
+Mini project, TE Computer Engineering (Div A), Rizvi College of Engineering, 2023–2024.
+
+- **Shadaab Hasan** (Team Leader)
+- Siddharth Pallar
+- Ayan Mastim
+- Hamza Khan
+
+**Guide:** Prof. Mohd Ashfaque Shaikh
