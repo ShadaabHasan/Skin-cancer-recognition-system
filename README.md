@@ -1,35 +1,55 @@
-# Skin cancer recognition system
+# Skin Cancer Recognition System
 
-> **Abstract** : The skin cancer recognition system is a computer vision project focused on early detection of skin cancer by analyzing digital images of skin lesions. The process involves image acquisition, preprocessing for quality enhancement, feature extraction capturing color, texture, and shape characteristics, and classification using machine learning or deep learning algorithm like CNNs. The model is trained on labeled datasets, validated, and tested for accuracy and generalization. The system aims to provide a non-invasive tool for early detection, potentially improving outcomes through timely intervention and treatment, contributing to public health by aiding both healthcare professionals and individuals in identifying potential skin cancer risks.
+A computer vision project that classifies images of skin lesions into **7 types**, including melanoma, using convolutional neural networks (CNNs). It includes a simple desktop app where you upload an image and get a prediction.
 
-### Project Members
-1. HASAN SHADAAB NAJMUL  [ Team Leader ] 
-2. PALLAR SIDDHARTH RAMCHANDRAN 
-3. MASTIM AYAN AHMED QASID 
-4. KHAN HAMZA GULREIZ 
+📄 **Published:** "Skin Cancer Recognition System", *Journal of Emerging Technologies and Innovative Research (JETIR)*, 29 June 2024. [Read the paper](https://www.jetir.org/view?paper=JETIR2406947)
 
-### Project Guides
-1. PROF. MOHD ASHFAQUE SHAIKH  [ Primary Guide ] 
+## Dataset
 
-### Deployment Steps
-Please follow the below steps to run this project.
-1. Step 1 `python3 GUI.py` 
-2. Step 2 Select the image you want to upload.
-3. Step 3 Click on start
+[HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000): **10,015** dermatoscopic images of skin lesions. This project uses the small version of the images (28 × 28 pixels, RGB), stored as `hmnist_28_28_RGB.csv`.
 
+The 7 classes:
 
-### Subject Details
-- Class : TE (COMP) Div A - 2023-2024
-- Subject : Mini Project Lab: 2B (mP2B)
-- Project Type : Mini Project
+| Label | Code | Lesion type |
+|---|---|---|
+| 0 | akiec | Actinic keratoses and intraepithelial carcinoma |
+| 1 | bcc | Basal cell carcinoma |
+| 2 | bkl | Benign keratosis-like lesions |
+| 3 | df | Dermatofibroma |
+| 4 | nv | Melanocytic nevi |
+| 5 | vasc | Vascular lesions |
+| 6 | mel | Melanoma |
 
-### Platform, Libraries and Frameworks used
-1. [NodeJS](https://nodejs.org)
-2. [ExpressJS](https://expressjs.org)
-3. [TensorFlow](https://tensorflowjs.com)
-4. [Python](https://docs.python.org/3/)
+## Method
 
-### Dataset Used
-1. [Kaggle Dataset- MNIST: HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
+1. **Balance the classes:** the dataset is very unbalanced (most images are `nv`), so the rare classes were oversampled with `RandomOverSampler`, giving 46,935 images.
+2. **Split:** 80% training, 20% testing.
+3. **Compare 4 CNN architectures**, trained with the Adam optimiser, categorical cross-entropy loss, learning-rate reduction and early stopping.
+4. **Choose the best:** Model 1 performed best, so it was retrained and saved as `finalModel.h5`.
+   - Model 1: four convolutional layers (32, 32, 64, 64 filters), max pooling, dropout (0.25), a dense layer of 128 units, and a 7-class softmax output.
+5. **Desktop app:** `GUI.py` (Tkinter) lets you upload an image, resizes it to 28 × 28, and shows the predicted lesion type.
 
+## Tech stack
 
+- Python
+- TensorFlow / Keras
+- scikit-learn, imbalanced-learn
+- NumPy, Pandas, Matplotlib, Seaborn
+- Tkinter and Pillow (desktop app)
+
+## How to run
+
+**Notebook:**
+1. Download `hmnist_28_28_RGB.csv` from the [Kaggle dataset page](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000) and put it in the project folder. (The file in this repo is an empty placeholder.)
+2. Open `final_notebook.ipynb` and run all cells.
+
+**Desktop app:**
+```bash
+pip install tensorflow pillow numpy
+python3 GUI.py
+```
+Click **Upload**, choose an image, then click **Start**.
+
+## Limitations
+
+- **The reported test accuracy is too optimistic.** The data was oversampled *before* it was split, so copies of the same image can appear in both the
